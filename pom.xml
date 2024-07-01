@@ -35,6 +35,14 @@
             <version>master-snapshot-g507e679-1</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>net.lldv.llamaeconomy</groupId>
+            <artifactId>LlamaEconomy</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>C:\Users\Ryzen\Documents\GitHub\ScoreBoard\libs\LlamaEconomy.jar</systemPath>
+        </dependency>
+
     </dependencies>
 
     <build>
