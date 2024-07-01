@@ -11,6 +11,7 @@ import cn.nukkit.plugin.Plugin;
 import graphicscore.placeholder.PlaceholderExtension;
 import graphicscore.player.ScorePlayer;
 import graphicscore.player.ScorePlayerManager;
+import net.lldv.llamaeconomy.LlamaEconomy;
 
 public class GraphicExtension extends PlaceholderExtension {
 
@@ -53,6 +54,9 @@ public class GraphicExtension extends PlaceholderExtension {
         session.update("graphic:held_item_count");
         session.update("graphic:online");
         session.update("graphic:online_max");
+        session.update("graphic:money");
+        session.update("graphic:status");
+
     }
 
     @Override
@@ -68,6 +72,10 @@ public class GraphicExtension extends PlaceholderExtension {
                 return String.valueOf(Server.getInstance().getOnlinePlayers().size());
             case "online_max":
                 return String.valueOf(Server.getInstance().getMaxPlayers());
+            case "money":
+                return String.valueOf(LlamaEconomy.getAPI().getMoney(player));
+            case "status":
+                return player.isOp() ? "\uE304" : "\uE305";
             default:
                 return null;
         }

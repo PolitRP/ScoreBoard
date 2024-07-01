@@ -19,10 +19,9 @@ public class ScorePlayer {
     }
 
     public void update(String params) {
-        int line = scoreboard.getPlaceholderParamsLine(params);
-        if (line != -1) {
-            ScoreFactory.editLine(player, line, PlaceholderAPI.setPlaceholders(player, scoreboard.getLines().get(line)));
-        }
+        Integer line = scoreboard.getPlaceholderParamsLine(params);
+        if (line == null) return;
+        ScoreFactory.editLine(player, line, PlaceholderAPI.setPlaceholders(player, scoreboard.getLines().get(line)));
     }
 
     private void refresh() {
@@ -41,4 +40,5 @@ public class ScorePlayer {
         refresh();
     }
 }
+
 
